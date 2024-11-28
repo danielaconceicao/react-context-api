@@ -6,13 +6,20 @@ export default function PostsList() {
 
     return (
         <>
-            {postsList.map(post => (
-                <div key={post.id}>
-                    <h2>{post.title}</h2>
-                    <p>{post.content}</p>
+            <div className="container">
+                <div className="row">
+                    {postsList.map(post => (
+                        <div key={post.id} className="col-sm-6 mb-3 mb-sm-0 py-5">
+                            <div className="card bg-dark text-white">
+                                <div className="card-body">
+                                    <h2>{post.title}</h2>
+                                    <p>{post.content}</p>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-            ))}
-
+            </div>
         </>
     )
 }
